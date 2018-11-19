@@ -20,6 +20,7 @@ COPY . .
 # docker run --rm testing ls -alR
 
 # test
+ENV TEAMCITY_PROJECT_NAME=fake
 RUN dotnet test tests/tests.csproj
 
 # publish
