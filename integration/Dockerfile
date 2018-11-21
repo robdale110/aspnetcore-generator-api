@@ -4,5 +4,6 @@ WORKDIR /integration
 COPY integration.csproj .
 RUN dotnet restore
 
+ENV TEAMCITY_PROJECT_NAME=fake
 COPY . .
-ENTRYPOINT ["dotnet", "test"]
+ENTRYPOINT ["dotnet", "test", "--logger:\"console;verbosity=normal\""]
